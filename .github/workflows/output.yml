@@ -1,0 +1,10 @@
+name: output-issues
+on: 
+  issues:
+    types: [opened, edited, milestoned]
+jobs:
+  issue-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch github context
+        run: echo "${{ toJSON(github) }}" 
